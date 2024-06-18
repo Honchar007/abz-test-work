@@ -4,6 +4,7 @@ import './assets/styles/index.scss';
 import StyledButton from './components/StyledButton';
 import StyledInput from './components/StyledInput';
 import Upload from './components/Upload';
+import Card from './components/Card';
 
 function App() {
   const [value, setValue] = useState('');
@@ -20,6 +21,7 @@ function App() {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
+      <Card />
     </>
   );
 }
