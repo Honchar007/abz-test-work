@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
 // styles
-import './Upload.module.scss';
+import './Upload.scss';
 
 const Upload = () => {
   const [name, setName] = useState('');

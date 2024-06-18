@@ -1,5 +1,5 @@
 // styles
-import './StyledButton.module.scss';
+import './StyledButton.scss';
 
 function StyledButton({ children, onClick, disabled }) {
   return (
