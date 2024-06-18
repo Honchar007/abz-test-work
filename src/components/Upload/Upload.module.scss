@@ -1,0 +1,46 @@
+.wrapper-upload {
+  .upload-func {
+    display: flex;
+    width: 328px;
+    height: 54px;
+
+    .upload-btn {
+      width: 83px;
+      height: 100%;
+      padding: 15px 14px;
+      border-radius: 4px 0px 0px 4px;
+      border: 1px solid #000000DE;
+    }
+
+    .error-btn {
+      border: 2px solid #CB3D40;
+    }
+
+    .upload-inpt {
+      width: 245px;
+      height: 100%;
+      padding: 16px 14px;
+      border-radius: 0px 4px 4px 0px;
+      border: 1px solid #D0CFCF;
+      border-left: 0;
+      text-overflow: ellipsis;
+
+      &::placeholder {
+        color: #7E7E7E;
+      }
+    }
+
+    .error-inpt {
+      border: 2px solid #CB3D40;
+      border-left: 0;
+    }
+  }
+
+  .error {
+    width: 51px;
+    margin: 4px 0 0 16px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #CB3D40;
+  }
+}
