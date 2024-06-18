@@ -1,0 +1,15 @@
+@import './variables';
+
+@mixin typo-h1 {
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+@mixin typo-body {
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}

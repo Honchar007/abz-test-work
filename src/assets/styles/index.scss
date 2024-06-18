@@ -1,0 +1,14 @@
+// configurations
+@import './reset.scss';
+@import './variables.scss';
+@import './fonts.scss';
+@import './mixins.scss';
+@import './typography.scss';
+
+body {
+  @include typo-body;
+}
+
+h1 {
+  @include typo-h1;
+}
