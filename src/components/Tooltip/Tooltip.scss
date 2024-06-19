@@ -1,0 +1,21 @@
+.tooltip-container {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tooltip {
+  visibility: visible;
+  background-color: #000000DE;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 3px 16px 3px 16px;
+  position: fixed;
+  z-index: 1;
+  white-space: nowrap;
+}
