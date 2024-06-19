@@ -1,0 +1,51 @@
+.welcome-bg {
+  position: relative;
+  background-image: url('../../assets/svgs/field.png'); // Замените на путь к вашему изображению
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; // Высота экрана
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px; // Опционально: для отступов вокруг контента
+  color: white;
+  overflow: hidden;
+
+  &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: inherit; // Наследование фона
+      background-size: inherit;
+      background-position: inherit;
+      background-repeat: inherit;
+      transform: translate(-10%, -63%) scale(3); // Увеличение фона и центрирование
+      transform-origin: center;
+      filter: brightness(0.5); // Затемнение фона
+      z-index: 1;
+  }
+
+  .welcome-wrapper {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+
+    h1 {
+      margin-bottom: 21px;
+    }
+
+    .welcome-description {
+      margin-bottom: 32px;
+    }
+  }
+}
+

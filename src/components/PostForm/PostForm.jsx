@@ -1,17 +1,17 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 // components
 import StyledInput from '../StyledInput';
 import StyledRadio from '../StyledRadio';
 import Upload from '../Upload';
+import StyledButton from '../StyledButton';
 
 // styles
 import './PostForm.scss';
 
 // assets
 import formSuccess from '../../assets/svgs/form-success.svg';
-import StyledButton from '../StyledButton';
-import { useState } from 'react';
 
 function PostForm() {
   const [isSubmit, setIsSubmit] = useState(false);
