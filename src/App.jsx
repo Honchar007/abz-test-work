@@ -5,6 +5,7 @@ import StyledButton from './components/StyledButton';
 import StyledInput from './components/StyledInput';
 import Upload from './components/Upload';
 import Card from './components/Card';
+import Preloader from './components/Preloader';
 
 function App() {
   const [value, setValue] = useState('');
@@ -22,6 +23,7 @@ function App() {
         onChange={(e) => setValue(e.target.value)}
       />
       <Card />
+      <Preloader />
     </>
   );
 }
