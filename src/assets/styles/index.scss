@@ -12,3 +12,8 @@ body {
 h1 {
   @include typo-h1;
 }
+
+
+.container-tooltip {
+  width: 170px;
+}

@@ -1,54 +1,55 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 // styles
 import './Upload.scss';
 
-const Upload = () => {
-  const [name, setName] = useState('');
-  const [error, setError] = useState('');
-
+const Upload = ({
+  className,
+  register,
+  name,
+  validationSchema,
+  errors,
+  value = '',
+}) => {
   const fileInputRef = useRef(null);
 
-  const handleButtonClick = () => {
+  const { ref: registerRef, ...rest } = register(name, validationSchema);
+
+  const handleButtonClick = (event) => {
+    event.preventDefault();
     fileInputRef.current.click();
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setName(file.name);
-      console.log(file);
-      if (!file.type.startsWith('image/')) {
-        setError('Error text');
-      }
-    }
-  };
-
   return (
-    <div className="wrapper-upload">
+    <div className={`wrapper-upload ${className}`}>
       <div className="upload-func">
         <button
           onClick={handleButtonClick}
-          className={`upload-btn ${error ? 'error-btn' : ''}`}
+          className={`upload-btn ${errors && errors[name] ? 'error-btn' : ''}`}
         >
           Upload
         </button>
         <input
           type="file"
-          ref={fileInputRef}
           style={{ display: 'none' }}
-          onChange={handleFileChange}
           accept="image/*"
+          {...rest}
+          ref={(e) => {
+            registerRef(e);
+            fileInputRef.current = e;
+          }}
         />
         <input
           readOnly
           type="text"
-          value={name}
-          className={`upload-inpt ${error ? 'error-inpt' : ''}`}
+          value={value && value[0] ? value[0].name : ''}
+          className={`upload-inpt ${errors && errors[name] ? 'error-inpt' : ''}`}
           placeholder="Upload your photo"
         />
       </div>
-      {error && <div className="error">{error}</div>}
+      {errors && errors[name] && (
+        <div className="error">{errors[name].message}</div>
+      )}
     </div>
   );
 };

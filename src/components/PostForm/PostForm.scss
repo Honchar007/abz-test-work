@@ -1,0 +1,39 @@
+.post-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .form-input {
+      margin-bottom: 50px;
+  
+      &:last-child {
+        margin-bottom: 43px;
+      }
+    }
+  
+    .form-radio-title {
+      margin-bottom: 11px;
+    }
+  
+    .form-radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 47px;
+    }
+  
+    .form-upload {
+      margin-bottom: 50px;
+    }
+  
+    .form-submit {
+      align-self: center;
+    }
+  }
+}
