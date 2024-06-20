@@ -2,7 +2,16 @@
 
 .welcome-bg {
   position: relative;
-  background-image: url('../../assets/svgs/field.png');
+  background-image: -webkit-image-set(
+    url("../../assets/svgs/field.avif") type("image/avif"),
+    url("../../assets/svgs/field.webp") type("image/webp"),
+    url('../../assets/svgs/field.png') type("image/png"),
+  );
+  background-image: image-set(
+    url("../../assets/svgs/field.avif") type("image/avif"),
+    url("../../assets/svgs/field.webp") type("image/webp"),
+    url('../../assets/svgs/field.png') type("image/png"),
+  );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
