@@ -6,12 +6,12 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended', // Добавлено для интеграции с Prettier
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh', 'prettier'], // Добавлен плагин Prettier
+  plugins: ['react-refresh', 'prettier'],
   rules: {
     'react/jsx-no-target-blank': 'off',
     'react/prop-types': 'off',
@@ -22,7 +22,7 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        semi: true, // Принудительное добавление точек с запятой
+        semi: true,
         singleQuote: true,
         printWidth: 80,
         'comma-dangle': [

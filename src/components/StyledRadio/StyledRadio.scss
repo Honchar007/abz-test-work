@@ -15,13 +15,11 @@
 
 .radio-text {
   position: relative;
-  display: -webkit-box;
+  width: 100%;
   padding-left: 32px;
   cursor: pointer;
   text-overflow: ellipsis;
   overflow: hidden;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
 }
 
 .radio-text::before {
@@ -33,7 +31,6 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0%;
-  margin-right: 5px;
   border: 1px solid #D0CFCF;
   border-radius: 50%;
   cursor: pointer;

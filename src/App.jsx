@@ -1,3 +1,8 @@
+import { useState } from 'react';
+
+// store
+import { useFetchUsersQuery } from './store/user.api';
+
 // components
 import Header from './components/Header';
 import Welcome from './components/Welcome';
@@ -8,7 +13,8 @@ import PostForm from './components/PostForm';
 import './assets/styles/index.scss';
 
 function App() {
-  // const [value, setValue] = useState('');
+  const [count, setCount] = useState(6);
+  const { data, isFetching, refetch } = useFetchUsersQuery({ page: 1, count });
 
   return (
     <div className="container">
@@ -16,8 +22,13 @@ function App() {
         <Header />
         <Welcome />
       </div>
-      <GetContent />
-      <PostForm />
+      <GetContent
+        count={count}
+        changeCount={setCount}
+        data={data}
+        isFetching={isFetching}
+      />
+      <PostForm changeCount={setCount} handleRefetch={refetch} />
     </div>
   );
 }

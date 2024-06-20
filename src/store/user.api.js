@@ -3,6 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const userApi = createApi({
   reducerPath: 'userApi',
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_APP_API_URL }),
+  tagTypes: ['User'],
   endpoints: (builder) => ({
     fetchUsers: builder.query({
       query: ({ page, count }) => `/users?page=${page}&count=${count}`,
@@ -23,8 +24,7 @@ export const userApi = createApi({
           url: '/users',
           method: 'POST',
           headers: {
-            'Content-Type': 'multipart/form-data',
-            Token: userData.token, // Replace with actual token
+            Token: userData.token,
           },
           body: formData,
         };

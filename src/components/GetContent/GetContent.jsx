@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import { useFetchUsersQuery } from '../../store/user.api';
-
 // components
 import Card from '../Card';
 import StyledButton from '../StyledButton';
@@ -9,16 +6,12 @@ import Preloader from '../Preloader';
 // styles
 import './GetContent.scss';
 
-function GetContent() {
-  const [count, setCount] = useState(6);
-
-  const { data, isFetching } = useFetchUsersQuery({ page: 1, count });
-
+function GetContent({ count, changeCount, data, isFetching }) {
   const showMore = () => {
     if (count + 6 >= data.total_users) {
-      setCount(data.total_users);
+      changeCount(data.total_users);
     } else {
-      setCount((prev) => prev + 6);
+      changeCount((prev) => prev + 6);
     }
   };
 

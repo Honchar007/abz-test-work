@@ -8,6 +8,7 @@ function StyledRadio({
   watchValue,
   name,
   register,
+  validationSchema,
 }) {
   return (
     <div>
@@ -18,8 +19,8 @@ function StyledRadio({
           className="radio"
           onChange={handleChange}
           value={value}
-          checked={watchValue === value}
-          {...register(name)}
+          checked={parseInt(watchValue) === value}
+          {...register(name, validationSchema)}
         />
         <span className="radio-text">{children}</span>
       </label>

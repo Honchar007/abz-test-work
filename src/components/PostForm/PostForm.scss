@@ -35,8 +35,14 @@
     .form-radio-group {
       display: flex;
       flex-direction: column;
+      max-width: 380px;
       gap: 7px;
       margin-bottom: 47px;
+
+      @include for-xs {
+        width: 328px;
+        max-width: 328px;
+      }
     }
   
     .form-upload {
