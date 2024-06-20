@@ -32,12 +32,6 @@ function PostForm({ changeCount, handleRefetch }) {
     formState: { errors, isValid, isDirty },
   } = useForm({
     mode: 'all',
-    defaultValues: {
-      name: 'Alice',
-      email: 'randommail@gmai.com',
-      phone: '+38054554545',
-      position_id: 1,
-    },
   });
 
   const onSubmit = async (data) => {
