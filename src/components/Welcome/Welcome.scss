@@ -1,3 +1,5 @@
+@import '../../assets/styles/mixins.scss';
+
 .welcome-bg {
   position: relative;
   background-image: url('../../assets/svgs/field.png'); // Замените на путь к вашему изображению
@@ -5,12 +7,14 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh; // Высота экрана
+  width: 100%;
+  max-width: 1170px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px; // Опционально: для отступов вокруг контента
+  padding: 16px;
   color: white;
   overflow: hidden;
 
@@ -38,6 +42,10 @@
     justify-content: center;
     align-items: center;
     width: 380px;
+
+    @include for-xs {
+      width: 328px;
+    }
 
     h1 {
       margin-bottom: 21px;

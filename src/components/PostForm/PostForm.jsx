@@ -88,6 +88,7 @@ function PostForm() {
             <StyledInput
               errors={errors}
               label="Phone"
+              helperText="+38 (XXX) XXX - XX - XX"
               id="phone"
               className="form-input"
               register={register}

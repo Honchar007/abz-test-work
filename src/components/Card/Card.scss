@@ -1,4 +1,5 @@
-// Card.scss
+@import '../../assets/styles/mixins.scss';
+
 .card {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,12 @@
   border-radius: 10px;
   max-width: 282px;
   gap: 20px;
+  background-color: #FFFFFF;
+
+  @include for-lg {
+    width: 370px;
+    max-width: 370px;
+  }
 
   &-image {
     width: 70px;

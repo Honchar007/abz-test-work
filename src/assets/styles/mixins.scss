@@ -1,23 +1,5 @@
 @import './variables.scss';
 
-@mixin for-sm-width {
-  @media (min-width: $sm-breakpoint) and (max-width: ($md-breakpoint - 1px)) {
-    @content;
-  }
-}
-
-@mixin for-md-width {
-  @media (min-width: $md-breakpoint) and (max-width: ($lg-breakpoint - 1px)) {
-    @content;
-  }
-}
-
-@mixin for-lg-width {
-  @media (min-width: $lg-breakpoint) {
-    @content;
-  }
-}
-
 @mixin for-sm-md {
   @media (min-width: $sm-breakpoint) and (max-width: ($lg-breakpoint - 1px)) {
     @content;
@@ -27,5 +9,30 @@
 @mixin for-md-lg {
   @media (min-width: $md-breakpoint) {
     @content;
+  }
+}
+
+
+@mixin for-xs {
+  @media (max-width: ($sm-breakpoint - 1)) {
+      @content;
+  }
+}
+
+@mixin for-sm {
+  @media (max-width: ($md-breakpoint - 1)) {
+      @content;
+  }
+}
+
+@mixin for-md {
+  @media (max-width: ($lg-breakpoint - 1)) {
+      @content;
+  }
+}
+
+@mixin for-lg {
+  @media (min-width: $lg-breakpoint) {
+      @content;
   }
 }

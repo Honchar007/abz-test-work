@@ -1,0 +1,30 @@
+@import '../../assets/styles/mixins.scss';
+
+.get-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 0 60px;
+
+  .card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 29px;
+
+    @include for-sm {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @include for-xs {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  .show-btn {
+    width: 120px;
+  }
+}

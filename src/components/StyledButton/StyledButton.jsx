@@ -6,7 +6,7 @@ function StyledButton({ children, onClick, disabled, className, type }) {
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`btn ${className}`}
+      className={`btn ${className ? className : ''}`}
       type={type}
     >
       {children}
