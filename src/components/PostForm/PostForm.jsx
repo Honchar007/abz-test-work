@@ -20,7 +20,7 @@ function PostForm() {
     watch,
     handleSubmit,
     setError,
-    formState: { errors },
+    formState: { errors, isValid, isDirty },
   } = useForm({
     mode: 'all',
     defaultValues: {
@@ -147,7 +147,11 @@ function PostForm() {
                 required: 'Required',
               }}
             />
-            <StyledButton type="submit" className="form-submit">
+            <StyledButton
+              disabled={!isDirty || !isValid}
+              type="submit"
+              className="form-submit"
+            >
               Sign up
             </StyledButton>
           </form>
