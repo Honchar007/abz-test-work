@@ -1,3 +1,5 @@
+# [Deploy here](https://honchar007.github.io/abz-test-work/)
+
 # Getting Started
 1. Clone or download this repository from GitHub
 2. Unzip the folder if needed and then go to the path in File Expoler where the folder is located
@@ -8,3 +10,11 @@
     - close terminal
     - npm run dev
 6. You can now test the app
+# Google Page Speed
+![Google Page Speed](https://github.com/Honchar007/abz-test-work/blob/master/page-speed.png)
+
+# Google Chrome Performance Lighthouse
+![Google Chrome Performance Lighthouse](https://github.com/Honchar007/abz-test-work/blob/master/lighthouse-page-speed.png)
+
+# Webpagetest
+![alt text](https://github.com/Honchar007/abz-test-work/blob/master/pagewebtest.png)
