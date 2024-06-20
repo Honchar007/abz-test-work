@@ -6,7 +6,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; // Высота экрана
+  height: 650px;
   width: 100%;
   max-width: 1170px;
   display: flex;
@@ -18,6 +18,10 @@
   color: white;
   overflow: hidden;
 
+  @include for-xs {
+    height: 500px;
+  }
+
   &::before {
       content: "";
       position: absolute;
@@ -25,13 +29,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: inherit; // Наследование фона
+      background-image: inherit;
       background-size: inherit;
       background-position: inherit;
       background-repeat: inherit;
-      transform: translate(-10%, -63%) scale(3); // Увеличение фона и центрирование
       transform-origin: center;
-      filter: brightness(0.5); // Затемнение фона
+      filter: brightness(0.5);
       z-index: 1;
   }
 
