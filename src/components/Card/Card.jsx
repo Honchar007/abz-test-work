@@ -1,10 +1,13 @@
+// components
 import Avatar from '../Avatar/Avatar';
+
+// styles
 import './Card.scss';
 
-const Card = ({ name, title, email, phone, urlImage }) => {
+const Card = ({ name, title, email, phone, imageUrl }) => {
   return (
     <div className="card">
-      <Avatar urlImage={urlImage} alt={name} />
+      <Avatar urlImage={imageUrl} alt={name} />
       <h2 className="card-name">{name}</h2>
       <div className="card-info">
         <p className="card-title">{title}</p>
