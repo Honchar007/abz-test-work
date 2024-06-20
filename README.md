@@ -8,3 +8,11 @@
     - close terminal
     - npm run dev
 6. You can now test the app
+# Google Page Speed
+![Google Page Speed](https://github.com/Honchar007/abz-test-work/blob/master/page-speed.png)
+
+# Google Chrome Performance Lighthouse
+![Google Chrome Performance Lighthouse](https://github.com/Honchar007/abz-test-work/blob/master/lighthouse-page-speed.png)
+
+# Webpagetest
+![alt text](https://github.com/Honchar007/abz-test-work/blob/master/pagewebtest.png)
