@@ -1,10 +1,9 @@
-// src/Tooltip.js
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 // styles
 import './Tooltip.scss';
 
-const Tooltip = ({ text, tooltipText }) => {
+const Tooltip = ({ text, tooltipText, className }) => {
   const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const tooltipRef = useRef(null);
@@ -33,7 +32,9 @@ const Tooltip = ({ text, tooltipText }) => {
 
       setTooltipPosition({ top: newTop, left: newLeft });
     }
+  };
 
+  const handleMouseEnter = () => {
     setIsTooltipVisible(true);
   };
 
@@ -41,24 +42,54 @@ const Tooltip = ({ text, tooltipText }) => {
     setIsTooltipVisible(false);
   };
 
+  useEffect(() => {
+    if (isTooltipVisible && tooltipRef.current) {
+      // Force re-calculation of tooltip position
+      const tooltipWidth = tooltipRef.current.offsetWidth;
+      const tooltipHeight = tooltipRef.current.offsetHeight;
+      const padding = 16;
+      const leftShift = 16;
+
+      let newTop = tooltipPosition.top;
+      let newLeft = tooltipPosition.left;
+
+      if (newLeft + tooltipWidth + padding > window.innerWidth) {
+        newLeft = window.innerWidth - tooltipWidth - padding + leftShift;
+      }
+
+      if (newLeft < leftShift) {
+        newLeft = leftShift;
+      }
+
+      if (newTop + tooltipHeight + padding > window.innerHeight) {
+        newTop = newTop - tooltipHeight - padding;
+      }
+
+      setTooltipPosition({ top: newTop, left: newLeft });
+    }
+  }, [isTooltipVisible]);
+
   return (
     <div className="tooltip-container">
       <span
-        className="text"
+        className={`text ${className ? className : ''}`}
+        onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
         {text}
       </span>
-      {isTooltipVisible && (
-        <div
-          ref={tooltipRef}
-          className="tooltip"
-          style={{ top: tooltipPosition.top, left: tooltipPosition.left }}
-        >
-          {tooltipText}
-        </div>
-      )}
+      <div
+        ref={tooltipRef}
+        className="tooltip"
+        style={{
+          top: tooltipPosition.top,
+          left: tooltipPosition.left,
+          visibility: isTooltipVisible ? 'visible' : 'hidden',
+        }}
+      >
+        {tooltipText}
+      </div>
     </div>
   );
 };
